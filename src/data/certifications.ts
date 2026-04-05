@@ -20,7 +20,8 @@ export const CERTIFICATIONS: Certification[] = [
     status: 'Obtida',
     year: '2026',
     description: 'Certificação de entrada em segurança da informação pela (ISC)², cobrindo conceitos de segurança, controle de acesso, criptografia e resposta a incidentes.',
-    badgeImage: '/badges/CC-ICS2.png',
+    badgeImage: '',
+    //badgeImage: 'import img from '@/assets/nome.jpg'',
   },
   {
     id: 2,
