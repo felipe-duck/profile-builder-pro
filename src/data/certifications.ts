@@ -1,4 +1,5 @@
 import ccisc2 from '@/assets/CC-ICS2.png';
+import fca_fortinet from '@/assets/FCA-Fortinet.png';
 
 //import img from '@/assets/nome.jpg;'
 
@@ -44,7 +45,7 @@ export const CERTIFICATIONS: Certification[] = [
     status: 'Obtida',
     year: '2025',
     description: 'Certificação associada da Fortinet em cibersegurança, com foco em segurança de redes e soluções Fortinet.',
-    badgeImage: '',
+    badgeImage: fca_fortinet,
   },
   {
     id: 4,
