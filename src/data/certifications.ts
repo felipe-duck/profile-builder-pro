@@ -1,3 +1,7 @@
+import ccisc2 from '@/assets/CC-ICS2.png'
+
+//import img from '@/assets/nome.jpg'
+
 export interface Certification {
   id: number;
   name: string;
@@ -20,8 +24,7 @@ export const CERTIFICATIONS: Certification[] = [
     status: 'Obtida',
     year: '2026',
     description: 'Certificação de entrada em segurança da informação pela (ISC)², cobrindo conceitos de segurança, controle de acesso, criptografia e resposta a incidentes.',
-    badgeImage: '',
-    //badgeImage: 'import img from '@/assets/nome.jpg'',
+    badgeImage: 'ccisc2',
   },
   {
     id: 2,
