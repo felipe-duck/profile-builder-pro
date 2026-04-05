@@ -84,26 +84,27 @@ const SKILLS = [
   'Pensamento analítico',
 ];
 
-// Competências (antigo "Ferramentas & Tecnologias" renomeado)
+// Competências — habilidades técnicas complementares
+// Para editar, adicione/remova strings do array
 const COMPETENCIAS = [
-  'Zabbix · Grafana · The Dude',
-  'FortiGate · FortiAnalyzer · Check Point',
-  'Winbox (MikroTik) · SmartOLT',
-  'ServiceNow · Hubsoft',
-  'Proxmox · VMware · Docker · Podman',
-  'AWS CloudWatch · Azure Monitor',
-  'Bash Scripting · SSH · PuTTY',
+  'Gestão de vulnerabilidades',
+  'Hardening de sistemas',
+  'Análise de logs e SIEM',
+  'Políticas de segurança e compliance',
+  'Documentação técnica',
+  'Automação de processos (scripting)',
 ];
 
-// Ferramentas & Tecnologias — novo bloco separado abaixo
-const FERRAMENTAS = [
-  'Zabbix · Grafana · The Dude',
-  'FortiGate · FortiAnalyzer · Check Point',
-  'Winbox (MikroTik) · SmartOLT',
-  'ServiceNow · Hubsoft',
-  'Proxmox · VMware · Docker · Podman',
-  'AWS CloudWatch · Azure Monitor',
-  'Bash Scripting · SSH · PuTTY',
+// Ferramentas & Tecnologias — agrupadas por área de atuação
+// Cada objeto tem "area" (título do grupo) e "tools" (lista de ferramentas)
+const FERRAMENTAS: { area: string; tools: string[] }[] = [
+  { area: 'Monitoramento', tools: ['Zabbix', 'Grafana', 'The Dude'] },
+  { area: 'Segurança / Firewall', tools: ['FortiGate', 'FortiAnalyzer', 'Check Point'] },
+  { area: 'Redes & Telecom', tools: ['Winbox (MikroTik)', 'SmartOLT', 'Huawei', 'TP-Link'] },
+  { area: 'Virtualização & Containers', tools: ['Proxmox', 'VMware', 'Docker', 'Podman'] },
+  { area: 'Cloud & Observabilidade', tools: ['AWS CloudWatch', 'Azure Monitor'] },
+  { area: 'Gestão & ITSM', tools: ['ServiceNow', 'Hubsoft'] },
+  { area: 'CLI & Automação', tools: ['Bash Scripting', 'SSH', 'PuTTY', 'Git'] },
 ];
 
 /* ── Animação ── */
@@ -428,7 +429,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ── HABILIDADES (unificado) ── */}
+      {/* ── HABILIDADES & COMPETÊNCIAS (lado a lado) + FERRAMENTAS (abaixo) ── */}
       <section className="py-20 px-6 border-t border-border">
         <div className="max-w-[1200px] mx-auto">
           <motion.div
@@ -442,78 +443,96 @@ export function HomePage() {
               <p className="text-primary text-xs tracking-[2.5px] uppercase font-semibold">Competências</p>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-10">
-              Habilidades
+              Habilidades & Ferramentas
             </h2>
           </motion.div>
 
-          {/* Card único de Habilidades */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-foreground font-bold text-[15px] mb-4 flex items-center gap-2">
-                <Shield size={14} className="text-primary" />
-                Habilidades
-              </h3>
-              <div className="space-y-2.5">
-                {SKILLS.map(item => (
-                  <div key={item} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
-                    <span className="text-muted-foreground text-[13px]">{item}</span>
-                  </div>
-                ))}
+          {/* Habilidades + Competências lado a lado */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+            {/* Card Habilidades */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="glass-card rounded-2xl p-6 h-full">
+                <h3 className="text-foreground font-bold text-[15px] mb-4 flex items-center gap-2">
+                  <Shield size={14} className="text-primary" />
+                  Habilidades
+                </h3>
+                <div className="space-y-2.5">
+                  {SKILLS.map(item => (
+                    <div key={item} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                      <span className="text-muted-foreground text-[13px]">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Card de Competências (antigo "Ferramentas & Tecnologias") */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="mb-8"
-          >
-            <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-foreground font-bold text-[15px] mb-4 flex items-center gap-2">
-                <Wrench size={14} className="text-primary" />
-                Competências
-              </h3>
-              <div className="space-y-2.5">
-                {COMPETENCIAS.map(item => (
-                  <div key={item} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
-                    <span className="text-muted-foreground text-[13px]">{item}</span>
-                  </div>
-                ))}
+            {/* Card Competências */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              <div className="glass-card rounded-2xl p-6 h-full">
+                <h3 className="text-foreground font-bold text-[15px] mb-4 flex items-center gap-2">
+                  <Wrench size={14} className="text-primary" />
+                  Competências
+                </h3>
+                <div className="space-y-2.5">
+                  {COMPETENCIAS.map(item => (
+                    <div key={item} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                      <span className="text-muted-foreground text-[13px]">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          {/* Card de Ferramentas & Tecnologias (novo bloco separado) */}
+          {/* Ferramentas & Tecnologias — visual diferenciado com cards por área */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
-            <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-foreground font-bold text-[15px] mb-4 flex items-center gap-2">
-                <Monitor size={14} className="text-primary" />
-                Ferramentas & Tecnologias
-              </h3>
-              <div className="space-y-2.5">
-                {FERRAMENTAS.map(item => (
-                  <div key={item} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
-                    <span className="text-muted-foreground text-[13px]">{item}</span>
+            <h3 className="text-foreground font-bold text-[15px] mb-5 flex items-center gap-2">
+              <Monitor size={14} className="text-primary" />
+              Ferramentas & Tecnologias
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {FERRAMENTAS.map((group, i) => (
+                <motion.div
+                  key={group.area}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                  className="rounded-xl border border-primary/15 bg-primary/[0.03] p-4 hover:border-primary/40 hover:bg-primary/[0.06] transition-all duration-200"
+                >
+                  {/* Área / categoria da ferramenta */}
+                  <span className="text-primary text-[11px] font-semibold tracking-[1.5px] uppercase mb-3 block">
+                    {group.area}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {group.tools.map(tool => (
+                      <span
+                        key={tool}
+                        className="text-[12px] px-2.5 py-1 rounded-md bg-secondary/80 text-muted-foreground border border-border/50"
+                      >
+                        {tool}
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
