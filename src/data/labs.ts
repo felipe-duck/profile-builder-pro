@@ -1,3 +1,5 @@
+import mikrolab01 from "@/assets/MikroLab.png"
+
 export interface Lab {
   id: string;
   title: string;
@@ -18,11 +20,11 @@ export interface Lab {
 export const LABS: Lab[] = [
   {
     id: 'lab-01',
-    title: '[Nome do Laboratório 1]',
-    subtitle: '[Subtítulo ou objetivo principal]',
+    title: 'MikroLab 01',
+    subtitle: 'Subtítulo teste',
     description: '[Descreva aqui o contexto e o objetivo do laboratório. O que foi estudado? Qual problema foi resolvido? Qual cenário foi simulado?]',
     tags: ['[Tecnologia 1]', '[Tecnologia 2]', '[Tecnologia 3]'],
-    category: '[Categoria]',
+    category: 'MikroTik',
     duration: '[X horas / X dias]',
     difficulty: 'Intermediário',
     howItWorks: [
@@ -35,8 +37,8 @@ export const LABS: Lab[] = [
     tools: ['[Ferramenta A]', '[Ferramenta B]', '[Ferramenta C]'],
     outcome: '[Descreva o resultado obtido ao final do laboratório e o que foi aprendido]',
     repoLink: '',
-    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600',
-    detailImage: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
+    image: mikrolab01,
+    detailImage: mikrolab01,
   },
   {
     id: 'lab-02',
@@ -57,28 +59,28 @@ export const LABS: Lab[] = [
     tools: ['[Ferramenta A]', '[Ferramenta B]'],
     outcome: '[Resultado obtido ao final do laboratório]',
     repoLink: '',
-    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600',
+    image: mikrolab01,
     detailImage: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
   },
-  {
-    id: 'lab-03',
-    title: '[Nome do Laboratório 3]',
-    subtitle: '[Subtítulo ou objetivo principal]',
-    description: '[Descreva aqui o contexto e o objetivo do laboratório.]',
-    tags: ['[Tecnologia 1]', '[Tecnologia 2]', '[Tecnologia 3]', '[Tecnologia 4]'],
-    category: '[Categoria]',
-    duration: '[X horas / X dias]',
-    difficulty: 'Iniciante',
-    howItWorks: [
-      '[Passo 1: Descreva a etapa inicial]',
-      '[Passo 2: Configuração do ambiente]',
-      '[Passo 3: Procedimento principal]',
-      '[Passo 4: Testes realizados]',
-    ],
-    tools: ['[Ferramenta A]', '[Ferramenta B]', '[Ferramenta C]', '[Ferramenta D]'],
-    outcome: '[Resultado obtido ao final do laboratório]',
-    repoLink: '',
-    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600',
-    detailImage: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
-  },
+//  {
+//    id: 'lab-03',
+//    title: '[Nome do Laboratório 3]',
+//    subtitle: '[Subtítulo ou objetivo principal]',
+//    description: '[Descreva aqui o contexto e o objetivo do laboratório.]',
+//    tags: ['[Tecnologia 1]', '[Tecnologia 2]', '[Tecnologia 3]', '[Tecnologia 4]'],
+//    category: '[Categoria]',
+//    duration: '[X horas / X dias]',
+//    difficulty: 'Iniciante',
+//    howItWorks: [
+//      '[Passo 1: Descreva a etapa inicial]',
+//      '[Passo 2: Configuração do ambiente]',
+//      '[Passo 3: Procedimento principal]',
+//      '[Passo 4: Testes realizados]',
+//    ],
+//    tools: ['[Ferramenta A]', '[Ferramenta B]', '[Ferramenta C]', '[Ferramenta D]'],
+//    outcome: '[Resultado obtido ao final do laboratório]',
+//    repoLink: '',
+//    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600',
+//    detailImage: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
+//  },
 ];
