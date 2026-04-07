@@ -35,14 +35,14 @@ export function LabDetailPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:items-center"
         >
           {/* Image */}
-          <div className="rounded-2xl overflow-hidden border border-border bg-black/20">
+          <div className="flex items-center justify-center rounded-2xl overflow-hidden border border-border bg-black/5 min-h-[300px] lg:min-h-0">
             <img
               src={lab.detailImage}
               alt={lab.title}
-              className="w-full h-auto object-contain block"
+              className="w-full h-auto object-contain"
               width={1200}
               height={600}
             />
