@@ -1,5 +1,8 @@
 import ccisc2 from '@/assets/CC-ICS2.png';
 import fca_fortinet from '@/assets/FCA-Fortinet.png';
+import linux_ibsec from "@/assets/Linux-IBSEC.png";
+import soc_ibsec from "@/assets/SOC_IBSEC.png"
+
 
 //import img from '@/assets/nome.jpg;'
 
@@ -55,7 +58,7 @@ export const CERTIFICATIONS: Certification[] = [
     status: 'Obtida',
     year: '2025',
     description: 'Formação em operações de centro de segurança (SOC), monitoramento, triagem de alertas e resposta a incidentes.',
-    badgeImage: '',
+    badgeImage: soc_ibsec,
   },
   {
     id: 5,
@@ -75,7 +78,7 @@ export const CERTIFICATIONS: Certification[] = [
     status: 'Obtida',
     year: '2025',
     description: 'Hardening e práticas de segurança em sistemas operacionais Linux, controle de permissões e auditoria.',
-    badgeImage: '',
+    badgeImage: linux_ibsec,
   },
   {
     id: 7,
