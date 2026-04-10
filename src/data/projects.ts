@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     tools: ['[Ferramenta A]', '[Ferramenta B]', '[Ferramenta C]'],
     objective: '[Descreva o objetivo principal do projeto e o que se espera alcançar com ele]',
     // notes: texto bruto / resumo livre — use \n\n para separar parágrafos se necessário
-    notes: '[Escreva aqui um resumo mais detalhado do funcionamento do projeto, contexto técnico, decisões de arquitetura ou qualquer informação relevante em formato livre]',
+    notes: 'Escreva aqui um resumo mais detalhado do funcionamento do projeto, contexto técnico, decisões de arquitetura ou qualquer informação relevante em formato livre',
     image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600',
     detailImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
   },
