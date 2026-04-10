@@ -63,21 +63,16 @@ export function ProjectsPage() {
                         </span>
                       </div>
                     </div>
-
-                    {/*<div className="p-5 flex-1 flex flex-col">
+                    <div className="p-5 flex-1 flex flex-col">
                       <div className="flex items-center gap-2 mb-2">
-                        <div className="flex items-center gap-1.5 text-muted-foreground text-[11px] mb-2">
-                          <Clock size={11} /> 
-                          {project.year}
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                          <Code2 size={14} className="text-primary" />
                         </div>
-                      </div>*/}
-
-                      <div className="flex items-center gap-2 mb-2">
                         <span className="text-muted-foreground/50 text-[11px]">
                           {project.year}
                         </span>
                       </div>
-                      
+                  
                       <h3 className="text-foreground font-bold text-[15px] mb-1.5">{project.title}</h3>
                       <p className="text-muted-foreground text-[13px] mb-3 line-clamp-2">{project.description}</p>
 
