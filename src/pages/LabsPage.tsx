@@ -72,7 +72,10 @@ export function LabsPage() {
 
                     <div className="p-5 flex-1 flex flex-col">
                       <div className="flex items-center gap-1.5 text-muted-foreground text-[11px] mb-2">
-                        <Clock size={11} /> {lab.duration}
+                        <Clock size={11} /> {lab.duration} 
+                        <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${DIFFICULTY_STYLES[lab.difficulty] || ''}`}>
+                          {lab.difficulty}
+                        </span>
                       </div>
                       <h3 className="text-foreground font-bold text-base mb-1.5">{lab.title}</h3>
                       <p className="text-muted-foreground text-[13px] mb-3 line-clamp-2">{lab.subtitle}</p>
