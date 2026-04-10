@@ -13,6 +13,17 @@ export interface Lab {
   tools: string[];
   outcome: string;
   repoLink: string;
+  // Novo campo: texto bruto / resumo livre do laboratório
+  // Use \n\n para separar parágrafos. Deixe como string vazia '' para ocultar a seção.
+  notes: string;
+  // Novo campo: URL ou caminho do arquivo de topologia para download
+  // Ex: '/downloads/lab-01-topologia.png' ou link externo
+  // Deixe como string vazia '' ou undefined para ocultar o botão
+  topologyDownload?: string;
+  // Novo campo: URL ou caminho do arquivo de configuração das máquinas para download
+  // Ex: '/downloads/lab-01-configs.zip' ou link externo
+  // Deixe como string vazia '' ou undefined para ocultar o botão
+  configDownload?: string;
   image: string;
   detailImage: string;
 }
@@ -37,6 +48,14 @@ export const LABS: Lab[] = [
     tools: ['[Ferramenta A]', '[Ferramenta B]', '[Ferramenta C]'],
     outcome: '[Descreva o resultado obtido ao final do laboratório e o que foi aprendido]',
     repoLink: '',
+    // notes: preencha com o resumo livre do laboratório. Deixe '' para ocultar a seção.
+    notes: '[Escreva aqui um resumo mais detalhado do laboratório em formato livre. Pode incluir contexto técnico, dificuldades encontradas, aprendizados, observações importantes, etc.]',
+    // topologyDownload: URL ou caminho local do arquivo de topologia (imagem, .drawio, .pdf, etc.)
+    // Exemplo: topologyDownload: '/downloads/lab-01-topologia.png',
+    topologyDownload: '',
+    // configDownload: URL ou caminho local do arquivo de configuração das máquinas (.zip, .rsc, .cfg, etc.)
+    // Exemplo: configDownload: '/downloads/lab-01-configs.zip',
+    configDownload: '',
     image: mikrolab01,
     detailImage: mikrolab01,
   },
@@ -59,6 +78,9 @@ export const LABS: Lab[] = [
     tools: ['[Ferramenta A]', '[Ferramenta B]'],
     outcome: '[Resultado obtido ao final do laboratório]',
     repoLink: '',
+    notes: '',
+    topologyDownload: '',
+    configDownload: '',
     image: mikrolab01,
     detailImage: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
   },
@@ -80,6 +102,9 @@ export const LABS: Lab[] = [
 //    tools: ['[Ferramenta A]', '[Ferramenta B]', '[Ferramenta C]', '[Ferramenta D]'],
 //    outcome: '[Resultado obtido ao final do laboratório]',
 //    repoLink: '',
+//    notes: '',
+//    topologyDownload: '',  // ou: topologyDownload: '/downloads/lab-03-topologia.png',
+//    configDownload: '',    // ou: configDownload: '/downloads/lab-03-configs.zip',
 //    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600',
 //    detailImage: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
 //  },
