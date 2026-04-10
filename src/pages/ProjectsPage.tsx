@@ -4,9 +4,9 @@ import { Code2, ArrowRight } from 'lucide-react';
 import { PROJECTS } from '@/data/projects';
 
 const STATUS_STYLES: Record<string, { badge: string; dot: string }> = {
-  'Concluído': { badge: 'bg-white-500/50 border-green-500/25 text-green-400', dot: 'bg-green-400 shadow-[0_0_6px_theme(colors.green.400)]' },
-  'Em andamento': { badge: 'bg-white-500/50 border-yellow-500/25 text-yellow-400', dot: 'bg-yellow-400 shadow-[0_0_6px_theme(colors.yellow.400)]' },
-  'Arquivado': { badge: 'bg-white-500/50 border-border text-muted-foreground', dot: 'bg-muted-foreground' },
+  'Concluído': { badge: 'bg-muted/50 border-green-500/25 text-green-400', dot: 'bg-green-400 shadow-[0_0_6px_theme(colors.green.400)]' },
+  'Em andamento': { badge: 'bg-muted/50 border-yellow-500/25 text-yellow-400', dot: 'bg-yellow-400 shadow-[0_0_6px_theme(colors.yellow.400)]' },
+  'Arquivado': { badge: 'bg-muted/50 border-border text-muted-foreground', dot: 'bg-muted-foreground' },
 };
 
 export function ProjectsPage() {
