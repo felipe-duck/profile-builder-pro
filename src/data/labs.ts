@@ -1,4 +1,5 @@
 import mikrolab01 from "@/assets/labs/MikroLab.jpeg"
+import forti_software from "@/assets/labs/forti_software.png"
 
 export interface Lab {
   id: string;
@@ -86,8 +87,8 @@ export const LABS: Lab[] = [
     // configDownload: URL ou caminho local do arquivo de configuração das máquinas (.zip, .rsc, .cfg, etc.)
     // Exemplo: configDownload: '/downloads/lab-01-configs.zip',
     configDownload: '',
-    image: mikrolab01,
-    detailImage: mikrolab01,
+    image: forti_software,
+    detailImage: forti_software,
   },
 //  {
 //    id: 'lab-03',
